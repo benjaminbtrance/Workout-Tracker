@@ -10,8 +10,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
 
-console.log('MONGO_URI ', process.env.MONGDB_URI);
-mongoose.connect(process.env.MONGDB_URI || 'mongodb://localhost/workout', {
+console.log('MONGODB_URI ', process.env.MONGODB_URI);
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/workout', {
 	useNewUrlParser: true,
 	useFindAndModify: false,
 	useUnifiedTopology: true,
