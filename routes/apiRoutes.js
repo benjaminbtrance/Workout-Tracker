@@ -1,7 +1,7 @@
-const Workout = require('../models/Workout.js');
 const router = require('express').Router();
+const Workout = require('../models/Workout.js');
 
-// Route for Dashboard - only display 7 days. Sum up the duration of exercises
+// View the total duration of each workout from the past seven workouts on the stats page
 router.get('/api/workouts/range', (req, res) => {
 	Workout.aggregate([
 		{ $addFields: { totalDuration: { $sum: '$exercises.duration' } } },
